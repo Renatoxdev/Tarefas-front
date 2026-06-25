@@ -28,13 +28,14 @@ src/
     useContadorDeTarefas.ts
   types/
     tarefa.ts
-  __tests__/
+  pages/
+    .gitkeep
+  tests/
     NovaTarefa.test.tsx
     page.test.tsx
     useContadorDeTarefas.test.ts
 ```
 
-> Observacao: o enunciado cita pastas `pages` e `tests`, mas este projeto usa `src/app` por seguir o App Router do Next.js 15. A pasta `src/__tests__` foi escolhida por ser uma convencao comum do Jest/Next para agrupar testes.
 
 ## Funcionalidades
 
