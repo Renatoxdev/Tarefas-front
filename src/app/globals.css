@@ -1,0 +1,226 @@
+:root {
+  --background: #f6f7f4;
+  --surface: #ffffff;
+  --surface-muted: #eef1ed;
+  --text: #1f2933;
+  --text-muted: #667085;
+  --border: #d9dfd7;
+  --accent: #2f6f73;
+  --accent-strong: #234f52;
+  --danger: #b42318;
+  --shadow: 0 18px 45px rgba(31, 41, 51, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  background:
+    linear-gradient(135deg, rgba(47, 111, 115, 0.10), transparent 34%),
+    linear-gradient(315deg, rgba(199, 91, 71, 0.10), transparent 36%),
+    var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+.page-shell {
+  width: min(100% - 32px, 760px);
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.page-header h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1;
+}
+
+.task-count {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  margin: 0;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--accent-strong);
+  background: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+}
+
+.task-panel {
+  margin-top: 22px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow);
+}
+
+.task-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.task-form label {
+  display: block;
+  grid-column: 1 / -1;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.task-form input {
+  min-width: 0;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  background: var(--surface);
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.task-form input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(47, 111, 115, 0.16);
+}
+
+.task-form input[aria-invalid='true'] {
+  border-color: var(--danger);
+}
+
+.task-form button {
+  height: 46px;
+  padding: 0 18px;
+  border-radius: 8px;
+  color: #ffffff;
+  background: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.task-form button:hover {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+}
+
+.task-form button:focus-visible {
+  outline: 3px solid rgba(47, 111, 115, 0.28);
+  outline-offset: 3px;
+}
+
+.task-error {
+  grid-column: 1 / -1;
+  margin: -2px 0 0;
+  color: var(--danger);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.task-section h2 {
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+}
+
+.task-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-list li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-muted);
+}
+
+.task-list span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.task-remove {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(180, 35, 24, 0.22);
+  border-radius: 8px;
+  color: var(--danger);
+  background: #fff7f6;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.task-remove:hover {
+  border-color: rgba(180, 35, 24, 0.44);
+  background: #ffeceb;
+}
+
+.task-remove:focus-visible {
+  outline: 3px solid rgba(180, 35, 24, 0.20);
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    width: min(100% - 24px, 760px);
+    padding: 36px 0;
+  }
+
+  .task-panel {
+    padding: 18px;
+  }
+
+  .task-form {
+    grid-template-columns: 1fr;
+  }
+
+  .task-form button {
+    width: 100%;
+  }
+
+  .task-list li {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .task-remove {
+    width: 100%;
+  }
+}
