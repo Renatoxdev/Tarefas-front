@@ -1,4 +1,4 @@
-# Lista de Tarefas com Next.js 15 e Testes
+﻿# Lista de Tarefas com Next.js 15 e Testes
 
 Aplicação simples de listagem e adição de tarefas criada para praticar testes unitários com Next.js 15, TypeScript, Jest e React Testing Library.
 
@@ -33,6 +33,8 @@ src/
     page.test.tsx
     useContadorDeTarefas.test.ts
 ```
+
+> Observacao: o enunciado cita pastas `pages` e `tests`, mas este projeto usa `src/app` por seguir o App Router do Next.js 15. A pasta `src/__tests__` foi escolhida por ser uma convencao comum do Jest/Next para agrupar testes.
 
 ## Funcionalidades
 
